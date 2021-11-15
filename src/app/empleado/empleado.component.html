@@ -1,0 +1,30 @@
+<button (click)="toggleText()">Cambiar</button>
+
+{{ showText }}
+
+<br />
+
+<div>
+  <button (click)="dec()">-</button>
+  <button (click)="inc()">+</button>
+  <label [style.font-size.px]="size">FontSize: {{ size }}</label>
+  <br /><br />
+  <input #phone placeholder="phone" />
+
+  <button (click)="callPhone(phone.value)">Call</button>
+  <br />
+  <p [appHighlight]="'gray'">
+    Este texto se resalta por la directiva de atributos, Atrribute directive, en
+    este caso la directiva Highlight
+  </p>
+
+  <div *ngFor="let p of estrellita; let i = index">{{i}} - {{p.name}}</div> 
+  <br>
+  <div [ngSwitch]="item.name">
+    <div *ngSwitchCase="'Sara'">Hola Sara</div>
+    <div *ngSwitchCase="'Polo'">Hola Polo</div>
+    <div *ngSwitchCase="'Fer'">Hola FER</div>
+    <div *ngSwitchDefault>Hola wee</div>
+</div>
+
+</div>

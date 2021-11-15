@@ -1,0 +1,22 @@
+<p>child-a works!</p>
+
+<br />
+<label for="name">Name: </label>
+<input type="text" id="name" [formControl]="lunacontroladora" />
+<p>Valor de [name] : {{ lunacontroladora.value }}</p>
+<p>
+  <button (click)="updateName()">Update name</button>
+</p>
+
+<form [formGroup]="profileForm"(ngSubmit)="onSubmit()" >
+  <label for="first-name">First Name: </label>
+  <input requiered type="text" id="first-name" formControlName="firstName" />
+  <br>
+  <label for="last-name">Last Name: </label>
+  <input required type="text" id="last-name" formControlName="lastName" />
+<br>
+  <button type="submit" [disabled]="!profileForm.valid">Enviar</button>
+</form>
+
+ 
+

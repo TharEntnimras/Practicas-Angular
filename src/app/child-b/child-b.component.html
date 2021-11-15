@@ -1,0 +1,29 @@
+<p>child-b works!</p>
+<h5>Form Template Driven</h5>
+<form>
+  <input
+    type="text"
+    name="campo1"
+    required
+    minlength="4"
+    [(ngModel)]="nameInput"
+    #estrellita="ngModel"
+  />
+  <div *ngIf="estrellita.invalid && (estrellita.dirty || estrellita.touched)">
+    <div *ngIf="estrellita.errors?.['required']">Nombre requerido</div>
+    <div *ngIf="estrellita.errors?.['minlength']">
+      Nombre debe tener al menos 4 caracteres.
+    </div>
+  </div>
+</form>
+<br />
+<h5>Form Reactive</h5>
+<form [formGroup]="validationForm">
+  <input type="text" name="campo2"  formControlName="namecontroler" />
+  <div *ngIf="namecontrolerget!.invalid && (namecontrolerget!.dirty || namecontrolerget!.touched)">
+    <div *ngIf="namecontrolerget!.errors?.['required']">Nombre requerido</div>
+    <div *ngIf="namecontrolerget!.errors?.['minlength']" >
+      Nombre debe tener al menos 4 caracteres.
+    </div>
+  </div>
+</form>
