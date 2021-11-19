@@ -1,5 +1,4 @@
-# Sucursal Virtual Web 
-# Gestora de la seguridad social a largo plazo
+# Practicas Angular 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
 
